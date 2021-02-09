@@ -3,7 +3,18 @@ from contextlib import contextmanager
 from fastapi import FastAPI, HTTPException
 import sqlite3
 
+from starlette.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @contextmanager
@@ -21,6 +32,12 @@ def serialize_character(row, cols):
     row["groups"] = [] if row["groups"] is None else [int(group_id) for group_id in row["groups"].split(",")]
     return row
 
+
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
+
+
 @app.get("/api/characters")
 def get_characters(name: str = ""):
     with get_cursor() as cur:
@@ -32,6 +49,7 @@ def get_characters(name: str = ""):
         """, (f"%{name}%",))
         response = [serialize_character(row, cur.description) for row in cur.fetchall()]
     return response
+
 
 @app.get("/api/characters/{item_id}")
 def get_character(item_id: int):
@@ -53,6 +71,7 @@ def serialize_group(row, cols):
     row["members"] = [] if row["members"] is None else [int(group_id) for group_id in row["members"].split(",")]
     return row
 
+
 @app.get("/api/groups")
 def get_groups(name: str = ""):
     with get_cursor() as cur:
@@ -64,6 +83,7 @@ def get_groups(name: str = ""):
         """, (f"%{name}%",))
         response = [serialize_group(row, cur.description) for row in cur.fetchall()]
     return response
+
 
 @app.get("/api/groups/{item_id}")
 def get_group(item_id: int):

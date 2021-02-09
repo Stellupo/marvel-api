@@ -44,12 +44,20 @@ INSERT INTO Character (id, name, story, abilities, img, header)
                'assets/images/Characters/ironman_header.png'
            ),
           (
-               3,
-               'GROOT',
-               'This sentient alien tree branches out of his comfort zone to help the Guardians of the Galaxy keep the people of the universe safe.',
-               'Regeneration', 'Super strength',
+                3,
+                'GROOT',
+                'This sentient alien tree branches out of his comfort zone to help the Guardians of the Galaxy keep the people of the universe safe.',
+                'Regeneration,Super strength',
                 'assets/images/Characters/groot.png',
                 'assets/images/Characters/groot_header.png'
+           ),
+          (
+                4,
+                'STORM',
+                'Mutant Ororo Munroe confounds enemies of the X-Men by using her psionic abilities to manipulate the weather.',
+                'Flying,Control of air,Generate lightning & tornados',
+                'assets/images/Characters/storm.jpg',
+                'assets/images/Characters/storm_header.png'
            );
 
 INSERT INTO "Group" (id, name, story, img, header)
@@ -65,13 +73,13 @@ INSERT INTO "Group" (id, name, story, img, header)
                'Guardians of the galaxy',
                'This group of intergalactic outlaws, turned unlikely saviors of the galaxy, are typically without a plan and bicker constantly. But they care deeply about one another and usually get the job done, legal or otherwise.',
                'assets/images/Groups/guardian_of_the_galaxy.jpg',
-               'assets/images/Groups/guardian_of_the_galaxy_header.jpg'
+               'assets/images/Groups/guardians_of_the_galaxy_header.jpg'
            ),
            (
                3,
                'Avengers',
                'The Avengers began as a group of extraordinary individuals who were assembled to defeat Loki and his Chitauri army in New York City. Since then, the team has expanded its roster and faced a host of new threats, while dealing with their own turmoil.',
-               'assets/images/Groups/avengers_header.jpg',
+               'assets/images/Groups/avengers.jpg',
                'assets/images/Groups/avengers_header.jpg'
            ),
            (
@@ -102,4 +110,9 @@ INSERT INTO GroupMember (id, character_id, group_id)
                4,
                3,
                2
+           ),
+           (
+               5,
+               4,
+               1
            );
