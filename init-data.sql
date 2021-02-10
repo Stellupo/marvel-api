@@ -38,8 +38,8 @@ INSERT INTO Character (id, name, story, abilities, img, header)
            (
                2,
                'IRON MAN',
-               'Having created a wondrous suit of armor to keep himself alive, Tony has revised it dozens of times, each version with increased capabilities, faster operation, reduced energy usage, and adaptability to the greatest threats the universe has to offer.',
-               '360 vision,Energy blast,Powerful Armor',
+               'Having created a wondrous suit of armor to keep himself alive, Tony Stark has revised it dozens of times, each version with increased capabilities, faster operation, reduced energy usage, and adaptability to the greatest threats the universe has to offer.',
+               '360 vision,Energy blast,Powerful armor',
                'assets/images/Characters/Ironman.jpg',
                'assets/images/Characters/ironman_header.png'
            ),
@@ -55,9 +55,49 @@ INSERT INTO Character (id, name, story, abilities, img, header)
                 4,
                 'STORM',
                 'Mutant Ororo Munroe confounds enemies of the X-Men by using her psionic abilities to manipulate the weather.',
-                'Flying,Control of air,Generate lightning & tornados',
+                'Flight,Control of air,Generate lightning & tornados',
                 'assets/images/Characters/storm.jpg',
                 'assets/images/Characters/storm_header.png'
+           ),
+           (
+                5,
+                'BLACK PANTHER',
+                'T’Challa is the king of the secretive and highly advanced African nation of Wakanda - as well as the powerful warrior known as the Black Panther.',
+                'Cat-like reflexes,Vibranium suit, Martial Art Master',
+                'assets/images/Characters/blackpanther.jpg',
+                'assets/images/Characters/blackpanther_header.jpg'
+           ),
+           (
+                6,
+                'CYCLOPS',
+                'Considered the first of the X-Men, Scott Summers can emit powerful beams of energy from his eyes that he can control with his special eyewear which he must wear at all times.',
+                'Optic blacst,Tactitian,Martial Art Master',
+                'assets/images/Characters/cyclops.png',
+                'assets/images/Characters/cyclops_header.png'
+           ),
+           (
+                7,
+                'ROGUE',
+                'Armed with the ability to temporarily absorb others’ powers and memories, this Mississippi runaway started her career as a villain before joining the X-Men to fight for good.',
+                'Power mimicry,Super strength,Flight',
+                'assets/images/Characters/rogue.jpg',
+                'assets/images/Characters/rogue_header.jpg'
+           ),
+           (
+                8,
+                'STAR LORD',
+                'Leader of the Guardians of the Galaxy, Peter Quill, brings a sassy sense of humor while protecting the universe from any and all threats.',
+                'Force field,Super strenght, Healing powers',
+                'assets/images/Characters/starlord.jpg',
+                'assets/images/Characters/starlord_header.png'
+           ),
+           (
+                9,
+                'CAPTAIN AMERICA',
+                'Recipient of the Super-Soldier serum, World War II hero Steve Rogers fights for American ideals as one of the world’s mightiest heroes and the leader of the Avengers.',
+                'Slowed age process,Super strenght,Vibranium shield,Tactician',
+                'assets/images/Characters/cap.jpg',
+                'assets/images/Characters/cap_header.png'
            );
 
 INSERT INTO "Group" (id, name, story, img, header)
@@ -87,7 +127,7 @@ INSERT INTO "Group" (id, name, story, img, header)
                'S.H.I.E.L.D',
                'S.H.I.E.L.D. is an espionage and security organization that defends Earth and its people from groups that pose advanced technological—and sometimes supernatural or extraterrestrial—threats',
                'assets/images/Groups/shield.jpg',
-               'assets/images/Groups/shield_header.jpg'
+               'assets/images/Groups/shield_header.png'
            );
 
 INSERT INTO GroupMember (id, character_id, group_id)
@@ -115,4 +155,29 @@ INSERT INTO GroupMember (id, character_id, group_id)
                5,
                4,
                1
+           ),
+           (
+               6,
+               5,
+               3
+           ),
+           (
+               7,
+               6,
+               1
+           ),
+           (
+               8,
+               7,
+               1
+           ),
+          (
+               9,
+               8,
+               2
+           ),
+           (
+              10,
+              9,
+              3
            );
